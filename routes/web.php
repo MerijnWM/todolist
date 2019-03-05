@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ListsController@index');
+Route::get('/createlist', 'ListsController@create');
+Route::get('/getlist/{id}', 'ListsController@get');
+Route::get('/deletelist', 'ListsController@delete');
+
+
