@@ -2,24 +2,25 @@
 
 <h1 class="text-center">ToDoList</h1>
 
-<div class="row">
+<div class="row" align="center">
     <div class="col-sm-12">
-    	<table class="table table-responsive table-hover m-b-0">
-			<thead>
-				<tr>
-					<th>naam</th>
-				</tr>
-			</thead>
-			<tbody>
-				<? foreach($list as $list):?>
-					<tr>
-						<td>{{$list->name}}</td>
-						
-						
-					</tr>
-				<? endforeach;?>
-			</tbody>
-		</table>
+    	<form action="{{ url('/editlist') }}" method="POST">
+    		{{ csrf_field() }}
+    		<input type="hidden" name="id" value="{{$list[0]->id}}">
+    		<div class="form-group ">
+                <label class="col-md-3 control-label">Lijstnaam</label>
+                <div class="col-md-9">
+                    <input class="form-control" type="text" name="name" value="{{$list[0]->name}}">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-9">
+                   	<input class="btn btn-default form-control" type="submit" name="submit" value="Opslaan">
+                </div>
+            </div>
+    	</form>
 	</div>
 </div>	
 
