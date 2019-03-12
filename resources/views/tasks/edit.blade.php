@@ -27,8 +27,8 @@
                 <label class="col-md-3 control-label">Status</label>
                 <div class="col-md-9">
                     <select class="form-control" name="status"> 
-                      <option value="niet gedaan">niet gedaan</option> 
-                      <option value="gedaan">gedaan</option>                     
+                      <option value="niet gedaan" <? if($task[0]->status == 'niet gedaan'){echo "selected";} ?>>niet gedaan</option> 
+                      <option value="gedaan" <? if($task[0]->status == 'gedaan'){echo "selected";} ?>>gedaan</option>                     
                     </select>
                 </div>
             </div>

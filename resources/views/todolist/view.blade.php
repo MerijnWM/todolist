@@ -4,21 +4,22 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="btn btn-outline-primary float-right">
-            <a href="{{ url('/createtask', $list[0]->list_id) }}"><i class="fa fa-plus"></i> Aanmaken</a>
+            <a href="{{ url('/createtask', $list_id) }}"><i class="fa fa-plus"></i> Aanmaken</a>
         </div>                      
     </div>
 </div>
+
 <? if(count($list) == 0): ?>
     Er zijn geen taken gevonden<br />
 <? else: ?>	
 		<div class="row">
 	        <div class="col-sm-12">
-	        	<table class="table table-responsive table-hover m-b-0">
+	        	<table id="myTable" class="table table-responsive table-hover m-b-0">
 					<thead>
 						<tr>
 							<th>Taak</th>
-							<th>Duur</th>
-							<th>Status</th>
+							<th onclick="sortTable(1)">Duur</th>
+							<th onclick="sortTable(2)">Status</th>
 						</tr>
 					</thead>
 					<tbody>

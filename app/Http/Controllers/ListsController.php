@@ -39,7 +39,7 @@ class ListsController extends Controller
 
     public function view($id){
         $list = DB::table('tasks')->where(['list_id' => $id])->get();
-        return view('todolist/view',['list' => $list]);
+        return view('todolist/view',['list' => $list , 'list_id' => $id]);
     }
 
     public function delete($id){
