@@ -24,3 +24,6 @@ Route::post('/inserttask', 'TasksController@insert');
 Route::get('/gettask/{id}', 'TasksController@get');
 Route::post('/edittask', 'TasksController@edit');
 Route::get('/deletetask/{id}', 'TasksController@delete');
+Route::get('/filterDescription/{value}/{id}', 'TasksController@filterDescription');
+Route::get('/filterStatus/{value}/{id}', 'TasksController@filterStatus');
+

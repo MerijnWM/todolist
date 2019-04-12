@@ -23,11 +23,19 @@
 						</tr>
 					</thead>
 					<tbody>
+
 						<? foreach($list as $task):?>
 							<tr>
 								<td>{{$task->description}}</td>	
-								<td>{{$task->duration}}</td>
-								<td>{{$task->status}}</td>
+								<td>
+									<a href="{{ url('/filterDescription', [$task->duration, $list_id] ) }}">			{{$task->duration}}
+									</a>
+								</td>
+								<td>
+									<a href="{{ url('/filterStatus', [$task->status, $list_id] ) }}">
+										{{$task->status}}
+									</a>
+								</td>
 								<td><a href="{{ url('/gettask', $task->id) }}">Edit</a></td>
 								<td><a href="{{ url('/deletetask', $task->id) }}">Delete</a></td>
 							</tr>

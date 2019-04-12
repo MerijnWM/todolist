@@ -42,4 +42,15 @@ class TasksController extends Controller
 
         return redirect()->back();
     }
+
+    public function filterDescription($filter, $id){
+        $list = DB::table('tasks')->where(['list_id' => $id, 'duration' => $filter])->get();
+        return view('todolist/view',['list' => $list , 'list_id' => $id]);
+    }
+
+
+    public function filterStatus($filter, $id){
+        $list = DB::table('tasks')->where(['list_id' => $id, 'status' => $filter])->get();
+        return view('todolist/view',['list' => $list , 'list_id' => $id]);
+    }
 }
